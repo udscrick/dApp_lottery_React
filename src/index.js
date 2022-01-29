@@ -1,3 +1,5 @@
+//Prerequisite To whoever is using this app they must have metamask installed in your browser with an account configured
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';

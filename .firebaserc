@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "um-official-ui"
+  },
+  "targets": {
+    "um-official-ui": {
+      "hosting": {
+        "ethraffle": [
+          "ethraffle"
+        ]
+      }
+    }
+  }
+}

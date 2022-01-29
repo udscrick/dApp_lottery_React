@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from "react";
+import Home from "./components/Home";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NoMetaMask from "./components/NoMetaMask";
+// import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  state = {
+    ethavailable:false
+  }
+constructor(props){
+  super(props)
+  
+  
 }
+
+componentDidMount(){
+  console.log("ETH available?",this.state.ethavailable)
+  if(window.ethereum){
+    console.log("Eth available")
+    this.setState({
+      ethavailable: true
+    })
+  }
+  else{
+    console.log("No eth")
+  }
+}
+
+  render(){
+    return(
+      <div>
+      <span>{this.state.ethavailable}</span>
+        {this.state.ethavailable==true?<Home />:<NoMetaMask />}
+      </div>
+    ) 
+    }
+  }
+  
+
 
 export default App;
